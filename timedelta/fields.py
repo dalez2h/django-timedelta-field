@@ -75,7 +75,7 @@ class TimedeltaField(six.with_metaclass(models.SubfieldBase, models.Field)):
 
     def value_to_string(self, obj):
         value = self._get_val_from_obj(obj)
-        return unicode(value)
+        return six.text_type(value)
 
     def get_default(self):
         """
